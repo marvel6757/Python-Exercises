@@ -1,0 +1,165 @@
+#Starting basics with w3schools
+print("Hellooooo")
+if 5>2:
+    print("5 is greater than 2")
+
+# This is a inline comment
+''' 
+This is also a comment
+'''
+#assigning variables
+x=5
+name='sally'
+y=3.0
+print(x,y,name)
+
+#type casting
+x=str(46)
+y=int(46)
+z=float(46)
+print(x,y,z)
+
+#print the type of variables
+X=3 #case-sentitive so x wont be overwrittten by X
+print(type(X))
+print(type(name))
+print(type(x))
+
+# camel case of defining variables
+myFirstVariable='This is defined in Camel Case'
+print(myFirstVariable)
+# pascal case of defining variables
+Myfirstvariable='This is defined in Pascal Case'
+print(Myfirstvariable)
+# Snake case of defining variables
+my_first_variable='This is defined in Snake Case'
+print(my_first_variable)
+
+#assigning multiple values to multiple variables 
+x, y, z='Orange', 'Apple', "Banana"
+print(x,y,z)
+
+#assigning 1 value to multiple variables
+x=y=z='Mango'
+print(x,y,z)
+
+#unpacking a collection 
+sentence=['you','are','my','everything']
+x,y,z,l=sentence 
+#couldn't just unpack a few from the list, need to unpack each element from the list
+print(x,y,z,l)
+#can also use + operator to print a sentence
+print(x+y+z+l) #This is displayed with no spaces
+print( 5 + 10) # this will perform an operation within print function
+'''
+print(5 + 'John') This isn't a valid statement, as both are of different types.
+'''
+print(X,x) # Using a comma between the variables of different types is valid X is int, x is string
+
+# defining  a function
+def myFunc():
+    print(x,y,z,l)  #accessing global variables
+
+#calling a function
+myFunc()
+
+def my_func():
+    l='world'
+    print(x,y,z,l)  #accessing 3 global and 1 local variable
+
+my_func()
+
+def global_variable():
+    global l  #stating a variable as global inside the function can change its scope to global 
+    l = 'kind'
+
+global_variable()
+print(x,y,z,l)
+
+#data types
+x='Hello' #string
+x= 10 #int
+x=9.0 #float
+x= 1J #complex
+print(x)
+
+'''
+https://learnpython.com/blog/python-lists-tuples-sets/
+'''
+print("LIST, SETS, TUPLES, FROZEN SETS, AND DICTIONARY CAN HOLD DIFFERENT DATA TYPES BUT THEY ARE UNIQUE WITH ITS FUNCTIONALITIES")
+
+
+us_presidents_list = ['Joe Biden', 'Donald Trump', 'Barack Obama', 'Barack Obama', 'George W. Bush', 'George W. Bush'] #list
+print("List are ordered, can contain duplicates, can be accessed by index, and are mutable")
+print(us_presidents_list)
+
+us_presidents_list[4]= 'George Bush'
+print(us_presidents_list)
+print("-------------------------------------------------------------------------------------------------------------")
+
+us_president_tuple = ('Joe', 'Biden', '2021-01-20', 'Democratic')#tuple
+print("can be used to hold one record just like a row in sql, can contain duplicates, can be accessed using indexing")
+print("BUT THIS DATA STRUCTURE IS IMMUTABLE IE NO ELEMENTS CAN BE ADDED OR DELETED IN THE MIDDLE")
+print(us_president_tuple)
+
+x=range(6)
+print(x)
+
+x={'name':'kelly','age': 30} #dictionary
+print(x)
+print('list is a index value pair where as dictionary is a key value pair like haah table')
+print("-------------------------------------------------------------------------------------------------------------")
+
+us_presidents_set = {'Bill Clinton', 'Joe Biden', 'Donald Trump', 'Barack Obama', 'George W. Bush'} #set
+print(us_presidents_set)
+print('sets are unordered and cannot contain duplicates but they are mutable add() ,remove() can be used')
+
+x=({'california','florida','ohio'}) #frozen set 
+print("These frozen sets are immutable")
+print(x)
+
+x=True # boolean
+print(x)
+
+x=b'Hello' #bytes can be used to store binary data for files like images
+print(x)
+
+x=bytearray(5) #byte array
+print(x)
+
+x=memoryview(bytes(5)) # memoryview
+print(x)
+
+#importing random module to get random numbers
+import random
+print('to print different data types in a string, I can use f string, or %\ operator  or format')
+print(f'printing a random number :: {random.randrange(0,20)}')
+
+print('When printing default separator is space but it can be modified')
+print(8, 11, 2000, sep="-")
+
+print("a default new line is created when print is ended but that can also be changed with end command")
+
+print("this is the first line but it will not end!!!",end=" ")
+print("This line continues the above line") 
+
+a_sentence='''
+This is a sentence written in two lines 
+and they can be accessed by the indexes just like arrays
+'''
+a='Hellooo'
+print(a_sentence)
+#print(a_sentence[0]) #not sure why this didn't work
+print(a[0])
+
+# we can loop through letters in a string
+for i in 'This is loop':
+    print(i)
+
+print(f"This is the length of value in var a: {len(a)}")
+
+# we can check if there is a word in our string using IN
+print("indexes" in a_sentence) # it returns true as there is a word indexes in the given sentence
+ 
+if("indexes" in a_sentence):
+    print("Yes, there the word indexes in the given sentence")
