@@ -7,16 +7,18 @@
 # Track the number of turns remaining.
 # If they run out of turns, provide feedback to the player. 
 # Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
-
 import random
 #from art import logo
 
 #print(logo)
 print("Welcome to the Number Guessing Game!!!\nI'm thinking of a number between 1 and 100")
+#user choice of difficulty
 difficulty=input('Choose a difficulty. Type "easy" or "hard": ')
 
+#pick a random number
 number=random.randint(1,100)
 
+#setting up the level
 if difficulty=='easy':
   level=10
 elif difficulty=='hard':
@@ -24,6 +26,7 @@ elif difficulty=='hard':
 else:
   print("Sorry!! Invalid input.")
 
+#while loop to count the attempts and guess the number
 while level:
   print(f"You have {level} attempts to make a guess")
   guess=int(input("Make a guess: "))
@@ -35,10 +38,11 @@ while level:
     print("Too High")
   elif guess<number:
     print("Too Low")
-
+    
   level-=1;
   if level:
     print("Guess again")
 
+#if the player loses the game reveal the answer
 if level==0:
   print(f"you lost the game!! The answer is {number}")
